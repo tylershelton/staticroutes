@@ -19,31 +19,49 @@
         }
     },
     "plugins": [
+        "@stylistic",
         "@typescript-eslint",
         "jest",
         "react",
         "react-hooks"
     ],
     "rules": {
-        "eol-last": [
+        "@stylistic/eol-last": [
             "error",
             "always"
         ],
-        "indent": [
+        "@stylistic/indent": [
             "error",
             2
         ],
-        "linebreak-style": [
+        "@stylistic/linebreak-style": [
             "error",
             "unix"
         ],
-        "quotes": [
+        "@stylistic/no-multiple-empty-lines": [
             "error",
-            "single"
+            {
+                "max": 2,
+                "maxBOF": 0,
+                "maxEOF": 1
+            }
         ],
-        "semi": [
+        "@stylistic/no-trailing-spaces": [
+            "error"
+        ],
+        "@stylistic/quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true,
+                "avoidEscape": true
+            }
+        ],
+        "@stylistic/semi": [
             "error",
             "always"
         ]
     }
 }
+
+
