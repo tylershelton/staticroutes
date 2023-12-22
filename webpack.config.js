@@ -7,21 +7,17 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default {
   mode: process.env.NODE_ENV || 'production',
-  entry: './client/App.js',
+  entry: './client/index.js',
   
   // configure loaders
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
     ],
-  },
-
-  resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
 
   plugins: [
