@@ -25,6 +25,10 @@
         "react-hooks"
     ],
     "rules": {
+        "eol-last": [
+            "error",
+            "always"
+        ],
         "indent": [
             "error",
             2
