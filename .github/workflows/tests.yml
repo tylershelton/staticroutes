@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run the jest test suite
+      - name: Run Tests
         uses: actions/setup-node@v4
         with:
           node-version: '21.x'
       - name: Install dependencies
         run: npm ci
-      - name: Run test suite
-        run: npm run test
+      - name: Run jest test suite
+        run: npm run test:ci
 
       - name: Tests Passed
         if: ${{ success() }}
