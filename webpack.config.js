@@ -8,7 +8,7 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 export default {
   mode: process.env.NODE_ENV || 'production',
   entry: './client/index.js',
-  
+
   // configure loaders
   module: {
     rules: [
