@@ -27,13 +27,17 @@ export default {
   ],
 
   devServer: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: process.env.PORT || 8080,
 
     hot: true,
     static: {
       directory: path.join(__dirname, 'dist'),
     },
+  },
+
+  watchOptions: {
+    poll: 1000,
   },
 
   devtool: 'eval-source-map',
