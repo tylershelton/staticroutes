@@ -36,5 +36,9 @@ export default {
     },
   },
 
+  watchOptions: {
+    poll: 1000,
+  },
+
   devtool: 'eval-source-map',
 };
