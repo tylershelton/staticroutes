@@ -1,6 +1,8 @@
-const App = () => {
+import { JSX } from "react/jsx-runtime";
+
+const App = (): JSX.Element => {
   return (
-    <strong>It&apos;s working...</strong>
+    <p>It&apos;s working...</p>
   );
 };
 
