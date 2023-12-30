@@ -9,11 +9,16 @@ export default {
   mode: process.env.NODE_ENV || 'production',
   entry: './client/index.js',
 
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+
   // configure loaders
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(tsx?|jsx?)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
@@ -25,6 +30,10 @@ export default {
       template: './client/index.html'
     }),
   ],
+
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+  },
 
   devServer: {
     host: '0.0.0.0',
