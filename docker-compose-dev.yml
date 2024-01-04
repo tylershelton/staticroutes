@@ -4,6 +4,7 @@ services:
   staticroutes:
     image: staticroutes-dev
     container_name: staticroutes-dev
+    hostname: staticroutes-dev
     build:
       context: .
       dockerfile: ./Dockerfile.dev
