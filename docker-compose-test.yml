@@ -3,18 +3,19 @@ version: '3.4'
 services:
   staticroutes:
     image: staticroutes-dev
-    container_name: staticroutes-dev
+    container_name: staticroutes-test
+    hostname: staticroutes-test
     build:
       context: .
       dockerfile: ./Dockerfile.dev
     environment:
-      NODE_ENV: development
+      NODE_ENV: test
     ports:
       - 8080:8080
     volumes:
-      - node_modules:/usr/src/app/node_modules
+      - /usr/src/app/node_modules
       - .:/usr/src/app
-    command: ["npm", "run", "dev"]
+    command: ["npm", "run", "test"]
 
 volumes:
   node_modules:

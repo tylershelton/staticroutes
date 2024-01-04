@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+docker-compose -f $REPO_ROOT/docker-compose-test.yml up
+
+exit 0

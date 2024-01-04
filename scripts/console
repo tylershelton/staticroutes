@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# check that required input is present
+if [ "$1" != "start" ] && [ "$1" != "stop" ]; then
+    # provide usage guidance to the user and exit
+    # with an error code
+    echo "Usage: ./scripts/console (start|stop)"
+    exit 1
+fi
+
+if [ $1 == "start" ]; then
+  $REPO_ROOT/scripts/update
+  docker-compose -f $REPO_ROOT/docker-compose-dev.yml up --build -d
+  docker-compose -f $REPO_ROOT/docker-compose-dev.yml exec staticroutes bash
+elif [ $1 == "stop" ]; then
+  docker-compose -f $REPO_ROOT/docker-compose-dev.yml down
+fi
+
+exit 0

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+$REPO_ROOT/scripts/bootstrap
+
+exit 0
