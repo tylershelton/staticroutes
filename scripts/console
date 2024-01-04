@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+$REPO_ROOT/scripts/update
+
+docker-compose -f $REPO_ROOT/docker-compose-dev.yml up --build -d
+docker-compose -f $REPO_ROOT/docker-compose-dev.yml exec staticroutes bash
+
+exit 0
