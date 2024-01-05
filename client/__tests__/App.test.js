@@ -6,6 +6,6 @@ import App from '../App';
 describe('<App />', () => {
   it('Renders the text "It\'s working..."', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/hello world/i)).toBeInTheDocument();
+    expect(getByText(/helo world/i)).toBeInTheDocument();
   });
 });
