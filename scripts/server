@@ -4,7 +4,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 
 npm run build
 
-docker build -t staticroutes:local-prod .
+docker build -t staticroutes:local-prod $REPO_ROOT
 docker run --name staticroutes --rm -p 8080:80 staticroutes:local-prod
 
 exit 0
