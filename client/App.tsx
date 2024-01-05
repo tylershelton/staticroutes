@@ -1,8 +1,9 @@
 import { JSX } from 'react/jsx-runtime';
+import Button from '@mui/material/Button';
 
 const App = (): JSX.Element => {
   return (
-    <p>It&apos;s working...</p>
+    <Button variant="contained">Hello world</Button>
   );
 };
 
