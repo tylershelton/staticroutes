@@ -13,7 +13,7 @@
     "dev": "NODE_ENV=development webpack-dev-server",
     "start": "echo \"Error: no production start process defined\" && exit 1",
     "test": "jest",
-    "test:ci": "jest --ci --reporters='default' --reporters='./.github/github-actions-reporter'"
+    "test:ci": "jest --ci --coverage --reporters='default' --reporters='./.github/github-actions-reporter'"
   },
   "repository": {
     "start": "node server/index.js",
