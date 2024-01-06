@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production webpack",
+    "coverage": "jest --coverage",
     "dev": "NODE_ENV=development webpack-dev-server",
     "start": "echo \"Error: no production start process defined\" && exit 1",
     "test": "jest",
