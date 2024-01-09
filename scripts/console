@@ -13,14 +13,14 @@ fi
 if [ $1 == "start" ]; then
   # ensure any leftover, local build artifacts don't get copied
   # into the container image
-  rm $REPO_ROOT/dist
+  rm -rf $REPO_ROOT/dist
   
   $REPO_ROOT/scripts/update
   docker-compose -f $REPO_ROOT/docker-compose-dev.yml up --build -d
   docker-compose -f $REPO_ROOT/docker-compose-dev.yml exec staticroutes bash
+  exit 0
 
 elif [ $1 == "stop" ]; then
   docker-compose -f $REPO_ROOT/docker-compose-dev.yml down
+  exit 0
 fi
-
-exit 0
