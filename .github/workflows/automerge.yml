@@ -21,9 +21,6 @@ on:
       pull-request:
         description: Pull Request Number
         required: false
-      review:
-        description: Review ID
-        required: false
 
 jobs:
   automerge:
