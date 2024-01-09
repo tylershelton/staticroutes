@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: reitermarkus/automerge@v2
+        env:
+          AUTOMERGE_TOKEN: ${{ secrets.AUTOMERGE_TOKEN }}
         with:
           token: ${{ secrets.AUTOMERGE_TOKEN }}
           merge-method: merge
