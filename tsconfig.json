@@ -3,10 +3,15 @@
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "lib": ["es6", "dom"],
     "module": "ESNext",
     "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
     "outDir": "dist",
     "strict": true,
+    "strictNullChecks": true,
     "target": "ESNext"
   },
   "include": [
