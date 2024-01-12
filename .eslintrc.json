@@ -29,6 +29,12 @@
     "react-hooks"
   ],
   "rules": {
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["css"]
+      }
+    ],
     "@stylistic/eol-last": [
       "error",
       "always"
