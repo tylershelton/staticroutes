@@ -3,6 +3,7 @@ import { useReducer } from 'react';
 
 import RouteState from './types/RouteState';
 import routeReducer from './reducers/RouteReducer';
+import { RouteContext, RouteDispatchContext } from './RouteContext';
 
 const globalStyle = css({
   fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
@@ -32,34 +33,8 @@ const App = (): JSX.Element => {
 
   return (
     <main css={globalStyle}>
-      <section id='server_setup' css={serverSetupStyle}>
-        <p>Given a server listening at</p>
-        <TextField
-          id='server_hostname'
-          label='hostname/ip'
-          variant='outlined'
-          defaultValue='localhost'
-          size='small'
-        />
-        <p>:</p>
-        <TextField
-          id='sever_port'
-          label='port'
-          variant='outlined'
-          defaultValue='80'
-          css={{ width: '6rem' }}
-          size='small'
-        />
-        <p>, a cat gif stored at <code>__dirname/</code></p>
-        <TextField
-          id="local_filepath"
-          label="filepath"
-          variant="outlined"
-          defaultValue="static"
-          size='small'
-        />
-        <p>--</p>
-      </section>
+      <RouteContext.Provider value={routeProps}>
+        <RouteDispatchContext.Provider value={dispatch}>
       <section id='express_static_setup' css={serverSetupStyle}>
         <pre>app.use(</pre>
         <TextField
@@ -83,6 +58,8 @@ const App = (): JSX.Element => {
       <section id='result' css={serverSetupStyle}>
             <p>-- would be served at <code>{`${routeProps.hostname}:${routeProps.port}/${routeProps.httpRoute}`}cat_meme.gif</code>.</p>
       </section>
+        </RouteDispatchContext.Provider>
+      </RouteContext.Provider>
     </main>
   );
 };
