@@ -37,26 +37,8 @@ const App = (): JSX.Element => {
       <RouteContext.Provider value={routeProps}>
         <RouteDispatchContext.Provider value={dispatch}>
           <ServerConf />
-          <section id='express_static_setup' css={serverSetupStyle}>
-            <pre>app.use(</pre>
-            <TextField
-              id='express_static_mount_path'
-              label='mount path'
-              variant='outlined'
-              defaultValue='/'
-              css={{ width: '10rem'}}
-              size='small'
-            />
-            <pre>, express.static(path.join(__dirname,</pre>
-            <TextField
-              id='express_static_root'
-              label='root'
-              variant='outlined'
-              defaultValue={routeProps.staticDir}
-              size='small'
-            />
-            <pre>))</pre>
-          </section>
+          <hr />
+          <hr />
           <section id='result' css={serverSetupStyle}>
             <p>-- would be served at <code>{`${routeProps.hostname}:${routeProps.port}/${routeProps.httpRoute}`}cat_meme.gif</code>.</p>
           </section>
