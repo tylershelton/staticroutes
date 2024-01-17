@@ -38,6 +38,9 @@ export default {
 
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    fallback: {
+      path: 'path-browserify',
+    },
   },
 
   devServer: {
