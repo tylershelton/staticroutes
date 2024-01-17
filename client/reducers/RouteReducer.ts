@@ -9,6 +9,12 @@ function routeReducer (routeState: RouteState, action: RouteAction): RouteState 
         hostname: action.hostname,
       };
     }
+    case 'changed_httpRoute': {
+      return {
+        ...routeState,
+        httpRoute: action.httpRoute,
+      };
+    }
     case 'changed_port': {
       return {
         ...routeState,
