@@ -1,7 +1,8 @@
-import { TextField, css } from '@mui/material';
+import { css } from '@mui/material';
 import { useReducer } from 'react';
 
 import ServerConf from './components/ServerConf';
+import ExpressStatic from './components/ExpressStatic';
 import RouteState from './types/RouteState';
 import routeReducer from './reducers/RouteReducer';
 import { RouteContext, RouteDispatchContext } from './RouteContext';
@@ -26,7 +27,7 @@ const initialRouteProps: RouteState = {
   hostname: 'localhost',
   port: '80',
   staticDir: 'static',
-  httpRoute: ''
+  httpRoute: '/'
 };
 
 const App = (): JSX.Element => {
@@ -38,6 +39,7 @@ const App = (): JSX.Element => {
         <RouteDispatchContext.Provider value={dispatch}>
           <ServerConf />
           <hr />
+          <ExpressStatic />
           <hr />
           <section id='result' css={serverSetupStyle}>
             <p>-- would be served at <code>{`${routeProps.hostname}:${routeProps.port}/${routeProps.httpRoute}`}cat_meme.gif</code>.</p>
