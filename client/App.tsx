@@ -57,12 +57,12 @@ const App = (): JSX.Element => {
           css={{ width: '10rem'}}
           size='small'
         />
-        <pre>, express.static(</pre>
+            <pre>, express.static(path.join(__dirname,</pre>
         <TextField
           id='express_static_root'
           label='root'
           variant='outlined'
-          defaultValue='__dirname, static'
+              defaultValue={routeProps.staticDir}
           size='small'
         />
         <pre>))</pre>
