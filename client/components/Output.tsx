@@ -1,6 +1,6 @@
 import { css } from '@mui/material';
 import { useContext } from 'react';
-import { RouteContext } from '../RouteContext';
+import { RouteContext } from '../contexts/RouteContext';
 import path from 'path';
 
 const serverSetupStyle = css({

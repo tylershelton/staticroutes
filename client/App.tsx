@@ -5,7 +5,7 @@ import ServerConf from './components/ServerConf';
 import ExpressStatic from './components/ExpressStatic';
 import RouteState from './types/RouteState';
 import routeReducer from './reducers/RouteReducer';
-import { RouteContext, RouteDispatchContext } from './RouteContext';
+import { RouteContext, RouteDispatchContext } from './contexts/RouteContext';
 import Output from './components/Output';
 
 const globalStyle = css({

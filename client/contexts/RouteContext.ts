@@ -1,6 +1,6 @@
 import { createContext } from 'react';
-import RouteState from './types/RouteState';
-import RouteAction from './types/RouteActions';
+import RouteState from '../types/RouteState';
+import RouteAction from '../types/RouteActions';
 
 export const RouteContext = createContext<RouteState>({
   hostname: 'localhost',

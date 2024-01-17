@@ -1,6 +1,6 @@
 import { TextField, css } from '@mui/material';
 import { useContext } from 'react';
-import { RouteContext, RouteDispatchContext } from '../RouteContext';
+import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
 
 const serverSetupStyle = css({
