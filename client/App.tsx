@@ -1,6 +1,7 @@
 import { TextField, css } from '@mui/material';
 import { useReducer } from 'react';
 
+import ServerConf from './components/ServerConf';
 import RouteState from './types/RouteState';
 import routeReducer from './reducers/RouteReducer';
 import { RouteContext, RouteDispatchContext } from './RouteContext';
@@ -35,29 +36,30 @@ const App = (): JSX.Element => {
     <main css={globalStyle}>
       <RouteContext.Provider value={routeProps}>
         <RouteDispatchContext.Provider value={dispatch}>
-      <section id='express_static_setup' css={serverSetupStyle}>
-        <pre>app.use(</pre>
-        <TextField
-          id='express_static_mount_path'
-          label='mount path'
-          variant='outlined'
-          defaultValue='/'
-          css={{ width: '10rem'}}
-          size='small'
-        />
+          <ServerConf />
+          <section id='express_static_setup' css={serverSetupStyle}>
+            <pre>app.use(</pre>
+            <TextField
+              id='express_static_mount_path'
+              label='mount path'
+              variant='outlined'
+              defaultValue='/'
+              css={{ width: '10rem'}}
+              size='small'
+            />
             <pre>, express.static(path.join(__dirname,</pre>
-        <TextField
-          id='express_static_root'
-          label='root'
-          variant='outlined'
+            <TextField
+              id='express_static_root'
+              label='root'
+              variant='outlined'
               defaultValue={routeProps.staticDir}
-          size='small'
-        />
-        <pre>))</pre>
-      </section>
-      <section id='result' css={serverSetupStyle}>
+              size='small'
+            />
+            <pre>))</pre>
+          </section>
+          <section id='result' css={serverSetupStyle}>
             <p>-- would be served at <code>{`${routeProps.hostname}:${routeProps.port}/${routeProps.httpRoute}`}cat_meme.gif</code>.</p>
-      </section>
+          </section>
         </RouteDispatchContext.Provider>
       </RouteContext.Provider>
     </main>
