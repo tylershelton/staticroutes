@@ -39,7 +39,16 @@ const ServerConf = (): JSX.Element => {
 
   return (
     <section id='server_setup' css={serverSetupStyle}>
-      <p>Given a server listening at</p>
+      <p>A cat gif saved in <code>__dirname/</code></p>
+      <TextField
+        id="local_filepath"
+        label="directory"
+        variant="outlined"
+        value={staticDir}
+        size='small'
+        onChange={handleChangeStaticDir}
+      />
+      <p>on a server listening at</p>
       <TextField
         id='server_hostname'
         label='hostname/ip'
@@ -57,15 +66,6 @@ const ServerConf = (): JSX.Element => {
         css={{ width: '6rem' }}
         size='small'
         onChange={handleChangePort}
-      />
-      <p>, a cat gif stored at <code>__dirname/</code></p>
-      <TextField
-        id="local_filepath"
-        label="filepath"
-        variant="outlined"
-        value={staticDir}
-        size='small'
-        onChange={handleChangeStaticDir}
       />
       <p>--</p>
     </section>
