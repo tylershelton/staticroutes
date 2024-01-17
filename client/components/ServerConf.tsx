@@ -1,6 +1,7 @@
 import { TextField, css } from '@mui/material';
 import { useContext } from 'react';
 import { RouteContext, RouteDispatchContext } from '../RouteContext';
+import { useDispatchFromContext } from '../lib/dispatchHelpers';
 
 const serverSetupStyle = css({
   margin: '2rem 1rem',
@@ -11,21 +12,9 @@ const serverSetupStyle = css({
   }
 });
 
-// At the time we define RouteDispatchContext, we don't have a dispatch
-// function to pass in as an initial state, so we set its typing to allow
-// for the state to be `null`. In order for us to actually be able to call
-// the function once the app is running without being beset by TypeScript errors,
-// we need to have stripped away that null typing -- useDispatchFromContext
-// does that for us.
-const useDispatchFromContext = () => {
-  const dispatch = useContext(RouteDispatchContext);
-  if (!dispatch) throw new Error('useDispatchFromContext must be used from within a Provider');
-  return dispatch;
-};
-
 const ServerConf = (): JSX.Element => {
   const { hostname, port, staticDir } = useContext(RouteContext);
-  const dispatch = useDispatchFromContext();
+  const dispatch = useDispatchFromContext(RouteDispatchContext);
 
   function handleChangeHostname (event: React.ChangeEvent<HTMLInputElement>): void {
     dispatch({
@@ -41,7 +30,7 @@ const ServerConf = (): JSX.Element => {
     });
   }
 
-  function handleChangeFilepath (event: React.ChangeEvent<HTMLInputElement>): void {
+  function handleChangeStaticDir (event: React.ChangeEvent<HTMLInputElement>): void {
     dispatch({
       type: 'changed_staticdir',
       staticDir: event.target.value,
@@ -55,7 +44,7 @@ const ServerConf = (): JSX.Element => {
         id='server_hostname'
         label='hostname/ip'
         variant='outlined'
-        defaultValue={hostname}
+        value={hostname}
         size='small'
         onChange={handleChangeHostname}
       />
@@ -64,7 +53,7 @@ const ServerConf = (): JSX.Element => {
         id='sever_port'
         label='port'
         variant='outlined'
-        defaultValue={port}
+        value={port}
         css={{ width: '6rem' }}
         size='small'
         onChange={handleChangePort}
@@ -74,9 +63,9 @@ const ServerConf = (): JSX.Element => {
         id="local_filepath"
         label="filepath"
         variant="outlined"
-        defaultValue={staticDir}
+        value={staticDir}
         size='small'
-        onChange={handleChangeFilepath}
+        onChange={handleChangeStaticDir}
       />
       <p>--</p>
     </section>
