@@ -81,7 +81,7 @@ const App = (): JSX.Element => {
         <pre>))</pre>
       </section>
       <section id='result' css={serverSetupStyle}>
-        <p>-- would be served at <code>hostname:port/&lt;result&gt;/cat_meme.gif</code>.</p>
+            <p>-- would be served at <code>{`${routeProps.hostname}:${routeProps.port}/${routeProps.httpRoute}`}cat_meme.gif</code>.</p>
       </section>
     </main>
   );
