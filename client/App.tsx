@@ -16,6 +16,13 @@ const serverSetupStyle = css({
   }
 });
 
+const initialRouteProps: RouteState = {
+  hostname: 'localhost',
+  port: '80',
+  staticDir: 'static',
+  httpRoute: ''
+};
+
 const App = (): JSX.Element => {
   return (
     <main css={globalStyle}>
