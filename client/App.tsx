@@ -1,4 +1,8 @@
 import { TextField, css } from '@mui/material';
+import { useReducer } from 'react';
+
+import RouteState from './types/RouteState';
+import routeReducer from './reducers/RouteReducer';
 
 const globalStyle = css({
   fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
@@ -24,6 +28,8 @@ const initialRouteProps: RouteState = {
 };
 
 const App = (): JSX.Element => {
+  const [routeProps, dispatch] = useReducer(routeReducer, initialRouteProps);
+
   return (
     <main css={globalStyle}>
       <section id='server_setup' css={serverSetupStyle}>
