@@ -1,23 +1,23 @@
 import RouteAction from '../types/RouteActions';
 import RouteState from '../types/RouteState';
 
-function routeReducer (routeProps: RouteState, action: RouteAction): RouteState {
+function routeReducer (routeState: RouteState, action: RouteAction): RouteState {
   switch (action.type) {
     case 'changed_hostname': {
       return {
-        ...routeProps,
+        ...routeState,
         hostname: action.hostname,
       };
     }
     case 'changed_port': {
       return {
-        ...routeProps,
+        ...routeState,
         port: action.port,
       };
     }
     case 'changed_staticdir': {
       return {
-        ...routeProps,
+        ...routeState,
         staticDir: action.staticDir,
       };
     }
