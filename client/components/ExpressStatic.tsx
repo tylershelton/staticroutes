@@ -43,7 +43,7 @@ const ExpressStatic = (): JSX.Element => {
         size='small'
         onChange={handleChangeHttpRoute}
       />
-      <pre>, express.static(path.join(__dirname,</pre>
+      <pre>, express.static(path.resolve(__dirname,</pre>
       <TextField
         id='express_static_root'
         label='root'
