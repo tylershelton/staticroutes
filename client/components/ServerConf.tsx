@@ -51,7 +51,7 @@ const ServerConf = (): JSX.Element => {
       <p>on a server listening at</p>
       <TextField
         id='server_hostname'
-        label='hostname_ip'
+        label='hostname/ip'
         variant='outlined'
         value={hostname}
         size='small'

@@ -29,7 +29,7 @@ describe('<ServerConf />', () => {
   });
 
   it('Provides an input for specifying the server hostname...', () => {
-    expect(screen.getByRole('textbox', { name: /hostname_ip/i })).toBeInTheDocument();
+    expect(screen.getByRole('textbox', { name: /hostname\/ip/i })).toBeInTheDocument();
   });
 
   it('Provides an input for specifying the port the server listens on...', () => {
