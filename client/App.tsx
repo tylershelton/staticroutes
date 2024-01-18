@@ -3,10 +3,10 @@ import { useReducer } from 'react';
 
 import ServerConf from './components/ServerConf';
 import ExpressStatic from './components/ExpressStatic';
-import RouteState from './types/RouteState';
 import routeReducer from './reducers/RouteReducer';
 import { RouteContext, RouteDispatchContext } from './contexts/RouteContext';
 import Output from './components/Output';
+import { initialRouteState } from './initialState';
 
 const globalStyle = css({
   fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
@@ -15,19 +15,12 @@ const globalStyle = css({
   color: 'rgba(0, 0, 0, 0.87)'
 });
 
-const initialRouteProps: RouteState = {
-  hostname: 'localhost',
-  port: '80',
-  staticDir: 'static',
-  httpRoute: '/'
-};
-
 const App = (): JSX.Element => {
-  const [routeProps, dispatch] = useReducer(routeReducer, initialRouteProps);
+  const [routeState, dispatch] = useReducer(routeReducer, initialRouteState);
 
   return (
     <main css={globalStyle}>
-      <RouteContext.Provider value={routeProps}>
+      <RouteContext.Provider value={routeState}>
         <RouteDispatchContext.Provider value={dispatch}>
           <ServerConf />
           <hr />
