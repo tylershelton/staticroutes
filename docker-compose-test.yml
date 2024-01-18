@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  staticroutes:
+  staticroutes-test:
     image: staticroutes-dev
     container_name: staticroutes-test
     hostname: staticroutes-test
