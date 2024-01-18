@@ -41,7 +41,7 @@ const ServerConf = (): JSX.Element => {
     <section id='server_setup' css={serverSetupStyle}>
       <p>A cat gif saved in <code>__dirname/</code></p>
       <TextField
-        id="local_filepath"
+        id="static_directory"
         label="directory"
         variant="outlined"
         value={staticDir}
@@ -51,7 +51,7 @@ const ServerConf = (): JSX.Element => {
       <p>on a server listening at</p>
       <TextField
         id='server_hostname'
-        label='hostname/ip'
+        label='hostname_ip'
         variant='outlined'
         value={hostname}
         size='small'
@@ -59,7 +59,7 @@ const ServerConf = (): JSX.Element => {
       />
       <p>:</p>
       <TextField
-        id='sever_port'
+        id='server_port'
         label='port'
         variant='outlined'
         value={port}
