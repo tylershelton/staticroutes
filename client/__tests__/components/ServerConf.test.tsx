@@ -24,15 +24,15 @@ describe('<ServerConf />', () => {
     render(<ServerConf />, { wrapper: Context });
   });
 
-  it('Provides an input for specifying the local static assets directory...', () => {
+  it('Provides an input for specifying the local static assets directory', () => {
     expect(screen.getByRole('textbox', { name: /directory/i })).toBeInTheDocument();
   });
 
-  it('Provides an input for specifying the server hostname...', () => {
+  it('Provides an input for specifying the server hostname', () => {
     expect(screen.getByRole('textbox', { name: /hostname\/ip/i })).toBeInTheDocument();
   });
 
-  it('Provides an input for specifying the port the server listens on...', () => {
+  it('Provides an input for specifying the port the server listens on', () => {
     expect(screen.getByRole('textbox', { name: /port/i })).toBeInTheDocument();
   });
 });
