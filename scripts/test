@@ -2,6 +2,6 @@
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
-docker-compose -f $REPO_ROOT/docker-compose-test.yml up --no-log-prefix
+docker-compose -f $REPO_ROOT/docker-compose-test.yml up --build --no-log-prefix
 
 exit 0
