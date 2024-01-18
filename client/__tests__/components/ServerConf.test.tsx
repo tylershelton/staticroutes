@@ -18,7 +18,6 @@ const Context = ({ children }: { children: React.ReactNode }): JSX.Element => {
   );
 };
 
-
 describe('<ServerConf />', () => {
   beforeEach(() => {
     render(<ServerConf />, { wrapper: Context });
