@@ -1,11 +1,34 @@
-import { JSX } from 'react/jsx-runtime';
+import { css } from '@mui/material';
+import { useReducer } from 'react';
+
+import ServerConf from './components/ServerConf';
+import ExpressStatic from './components/ExpressStatic';
+import routeReducer from './reducers/RouteReducer';
+import { RouteContext, RouteDispatchContext } from './contexts/RouteContext';
+import Output from './components/Output';
+import { initialRouteState } from './initialState';
+
+const globalStyle = css({
+  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+  fontWeight: 400,
+  fontSize: '1rem',
+  color: 'rgba(0, 0, 0, 0.87)'
+});
 
 const App = (): JSX.Element => {
+  const [routeState, dispatch] = useReducer(routeReducer, initialRouteState);
+
   return (
-    <main>
-      <p>A cat gif stored at <code>__dirname/static/cat_meme.gif</code> --</p>
-      <pre>app.use(&lt;mount path&gt;, express.static(&lt;root&gt;))</pre>
-      <p>-- will be served at <code>hostname:port/&lt;result&gt;</code></p>
+    <main css={globalStyle}>
+      <RouteContext.Provider value={routeState}>
+        <RouteDispatchContext.Provider value={dispatch}>
+          <ServerConf />
+          <hr />
+          <ExpressStatic />
+          <hr />
+          <Output />
+        </RouteDispatchContext.Provider>
+      </RouteContext.Provider>
     </main>
   );
 };

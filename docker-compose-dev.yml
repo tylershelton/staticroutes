@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  staticroutes:
+  staticroutes-dev:
     image: staticroutes-dev
     container_name: staticroutes-dev
     hostname: staticroutes-dev

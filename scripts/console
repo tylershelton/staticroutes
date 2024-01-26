@@ -17,7 +17,7 @@ if [ $1 == "start" ]; then
   
   $REPO_ROOT/scripts/update
   docker-compose -f $REPO_ROOT/docker-compose-dev.yml up --build -d
-  docker-compose -f $REPO_ROOT/docker-compose-dev.yml exec staticroutes bash
+  docker-compose -f $REPO_ROOT/docker-compose-dev.yml exec staticroutes-dev bash
   exit 0
 
 elif [ $1 == "stop" ]; then

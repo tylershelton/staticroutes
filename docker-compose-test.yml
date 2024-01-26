@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  staticroutes:
+  staticroutes-test:
     image: staticroutes-dev
     container_name: staticroutes-test
     hostname: staticroutes-test
@@ -10,8 +10,6 @@ services:
       dockerfile: ./Dockerfile.dev
     environment:
       NODE_ENV: test
-    ports:
-      - 8080:8080
     volumes:
       - /usr/src/app/node_modules
       - .:/usr/src/app

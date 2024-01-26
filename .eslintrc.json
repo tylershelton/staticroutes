@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:jest-dom/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -24,11 +25,18 @@
     "@stylistic",
     "@typescript-eslint",
     "jest",
+    "jest-dom",
     "jsx-a11y",
     "react",
     "react-hooks"
   ],
   "rules": {
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["css"]
+      }
+    ],
     "@stylistic/eol-last": [
       "error",
       "always"

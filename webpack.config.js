@@ -18,7 +18,12 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(tsx?|jsx?)$/,
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
+      {
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
@@ -33,6 +38,9 @@ export default {
 
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    fallback: {
+      path: 'path-browserify',
+    },
   },
 
   devServer: {
