@@ -1,22 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import React from 'react';
+import { Context, render, screen } from '../test-utils';
 import ServerConf from '../../components/ServerConf';
-import { RouteContext, RouteDispatchContext } from '../../contexts/RouteContext';
-import { initialRouteState } from '../../initialState';
-import { useReducer } from 'react';
-import routeReducer from '../../reducers/RouteReducer';
-
-const Context = ({ children }: { children: React.ReactNode }): JSX.Element => {
-  const [routeState, dispatch] = useReducer(routeReducer, initialRouteState);
-  return (
-    <RouteContext.Provider value={routeState}>
-      <RouteDispatchContext.Provider value={dispatch}>
-        {children}
-      </RouteDispatchContext.Provider>
-    </RouteContext.Provider>
-  );
-};
 
 describe('<ServerConf />', () => {
   beforeEach(() => {
