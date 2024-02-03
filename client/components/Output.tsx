@@ -19,7 +19,7 @@ const Output = (): JSX.Element => {
 
   return (
     <Box id='result' css={serverSetupStyle}>
-      <p>-- would be served at <code>{`${hostname}:${port}${route}`}</code>.</p>
+      <p>would be served at <code>{`${hostname}:${port}${route}`}</code>.</p>
     </Box>
   );
 };
