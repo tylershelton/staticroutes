@@ -1,8 +1,8 @@
-import { Paper, TextField, css } from '@mui/material';
+import { Paper, Stack, TextField } from '@mui/material';
 import { useContext } from 'react';
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
-
+import FlowIndicator from './FlowIndicator';
 const serverSetupStyle = css({
   margin: '2rem 0',
   // display: 'flex',
@@ -31,7 +31,7 @@ const ExpressStatic = (): JSX.Element => {
   }
 
   return (
-    <Paper id='express_static_setup' css={serverSetupStyle}>
+    <Stack>
       <pre>app.use(</pre>
       <TextField
         id='express_static_mount_path'
@@ -53,6 +53,8 @@ const ExpressStatic = (): JSX.Element => {
       />
       <pre>))</pre>
     </Paper>
+      <FlowIndicator />
+    </Stack>
   );
 };
 
