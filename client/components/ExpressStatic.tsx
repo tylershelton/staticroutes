@@ -1,4 +1,4 @@
-import { TextField, css } from '@mui/material';
+import { Paper, TextField, css } from '@mui/material';
 import { useContext } from 'react';
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
@@ -11,7 +11,6 @@ const serverSetupStyle = css({
     margin: 'auto 0.5rem'
   }
 });
-
 
 const ExpressStatic = (): JSX.Element => {
   const { httpRoute, staticDir } = useContext(RouteContext);
@@ -32,7 +31,7 @@ const ExpressStatic = (): JSX.Element => {
   }
 
   return (
-    <section id='express_static_setup' css={serverSetupStyle}>
+    <Paper id='express_static_setup' css={serverSetupStyle}>
       <pre>app.use(</pre>
       <TextField
         id='express_static_mount_path'
@@ -53,7 +52,7 @@ const ExpressStatic = (): JSX.Element => {
         onChange={handleChangeStaticDir}
       />
       <pre>))</pre>
-    </section>
+    </Paper>
   );
 };
 
