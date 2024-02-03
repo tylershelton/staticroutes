@@ -2,10 +2,14 @@
 import { Stack } from '@mui/material';
 import { useReducer } from 'react';
 
+// internal libs/dependencies
+import { RouteContext, RouteDispatchContext } from './contexts/RouteContext';
+import { initialRouteState } from './initialState';
+import routeReducer from './reducers/RouteReducer';
+
+// internal components
 import ServerConf from './components/ServerConf';
 import ExpressStatic from './components/ExpressStatic';
-import routeReducer from './reducers/RouteReducer';
-import { RouteContext, RouteDispatchContext } from './contexts/RouteContext';
 import Output from './components/Output';
 import { initialRouteState } from './initialState';
 
