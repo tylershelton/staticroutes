@@ -1,4 +1,5 @@
-import { css } from '@mui/material';
+// external libs/dependencies
+import { Stack } from '@mui/material';
 import { useReducer } from 'react';
 
 import ServerConf from './components/ServerConf';
@@ -19,17 +20,15 @@ const App = (): JSX.Element => {
   const [routeState, dispatch] = useReducer(routeReducer, initialRouteState);
 
   return (
-    <main css={globalStyle}>
       <RouteContext.Provider value={routeState}>
         <RouteDispatchContext.Provider value={dispatch}>
+        <Stack>
           <ServerConf />
-          <hr />
           <ExpressStatic />
-          <hr />
           <Output />
+        </Stack>
         </RouteDispatchContext.Provider>
       </RouteContext.Provider>
-    </main>
   );
 };
 
