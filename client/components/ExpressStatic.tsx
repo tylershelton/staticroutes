@@ -4,12 +4,12 @@ import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
 
 const serverSetupStyle = css({
-  margin: '2rem 1rem',
-  display: 'flex',
-  '& p, pre': {
-    whiteSpace: 'nowrap',
-    margin: 'auto 0.5rem'
-  }
+  margin: '2rem 0',
+  // display: 'flex',
+  // '& p, pre': {
+  //   whiteSpace: 'nowrap',
+  //   margin: 'auto 0.5rem'
+  // }
 });
 
 const ExpressStatic = (): JSX.Element => {

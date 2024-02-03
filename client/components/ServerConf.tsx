@@ -4,7 +4,7 @@ import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
 
 const serverSetupStyle = css({
-  margin: '2rem 1rem',
+  marginBottom: '2rem',
   display: 'flex',
   '& p, pre': {
     whiteSpace: 'nowrap',

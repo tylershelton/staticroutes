@@ -4,7 +4,7 @@ import { RouteContext } from '../contexts/RouteContext';
 import path from 'path';
 
 const serverSetupStyle = css({
-  margin: '2rem 1rem',
+  margin: '2rem 0',
   display: 'flex',
   '& p, pre': {
     whiteSpace: 'nowrap',

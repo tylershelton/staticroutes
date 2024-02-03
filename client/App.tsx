@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
   return (
     <RouteContext.Provider value={routeState}>
       <RouteDispatchContext.Provider value={dispatch}>
-        <Stack>
+        <Stack sx={{ p: 8 }}>
           <ServerConf />
           <ExpressStatic />
           <Output />
