@@ -1,4 +1,4 @@
-import { TextField, css } from '@mui/material';
+import { Box, TextField, css } from '@mui/material';
 import { useContext } from 'react';
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
@@ -38,7 +38,7 @@ const ServerConf = (): JSX.Element => {
   }
 
   return (
-    <section id='server_setup' css={serverSetupStyle}>
+    <Box id='server_setup' css={serverSetupStyle}>
       <p>A cat gif saved in <code>__dirname/</code></p>
       <TextField
         id="static_directory"
@@ -67,8 +67,7 @@ const ServerConf = (): JSX.Element => {
         size='small'
         onChange={handleChangePort}
       />
-      <p>--</p>
-    </section>
+    </Box>
   );
 };
 

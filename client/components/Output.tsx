@@ -1,4 +1,4 @@
-import { css } from '@mui/material';
+import { Box, css } from '@mui/material';
 import { useContext } from 'react';
 import { RouteContext } from '../contexts/RouteContext';
 import path from 'path';
@@ -18,9 +18,9 @@ const Output = (): JSX.Element => {
   const route = path.resolve('/', httpRoute, 'cat_meme.gif');
 
   return (
-    <section id='result' css={serverSetupStyle}>
+    <Box id='result' css={serverSetupStyle}>
       <p>-- would be served at <code>{`${hostname}:${port}${route}`}</code>.</p>
-    </section>
+    </Box>
   );
 };
 
