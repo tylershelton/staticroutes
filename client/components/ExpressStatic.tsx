@@ -32,7 +32,7 @@ const ExpressStatic = (): JSX.Element => {
   }
 
   return (
-    <PipelineComponent>
+    <PipelineComponent title='Express.js static route declaration'>
       <Paper sx={{ p: 2 }} id='express_static_setup'>
         <pre>app.use(</pre>
         <TextField
