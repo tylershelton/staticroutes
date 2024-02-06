@@ -17,6 +17,9 @@ const theme = createTheme({
       primary: '#2E3440',
     },
   },
+  typography: {
+    fontSize: 18,
+  }
 });
 
 const root = createRoot(document.getElementById('app'));
