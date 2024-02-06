@@ -40,35 +40,36 @@ const ServerConf = (): JSX.Element => {
 
   return (
     <PipelineComponent>
-          <p>A cat gif saved in <code>__dirname/</code></p>
-          <TextField
-            id="static_directory"
-            label="directory"
-            variant="outlined"
-            value={staticDir}
-            size='small'
-            onChange={handleChangeStaticDir}
-          />
-          <p>on a server listening at</p>
-          <TextField
-            id='server_hostname'
-            label='hostname/ip'
-            variant='outlined'
-            value={hostname}
-            size='small'
-            onChange={handleChangeHostname}
-          />
-          <p>:</p>
-          <TextField
-            id='server_port'
-            label='port'
-            variant='outlined'
-            value={port}
-            css={{ width: '6rem' }}
-            size='small'
-            onChange={handleChangePort}
-          />
-        </Box>
+      <Box sx={{ mx: 'auto', w: '100%' }} css={serverSetupStyle}>
+        <p>A cat gif saved in <code>__dirname/</code></p>
+        <TextField
+          id="static_directory"
+          label="directory"
+          variant="outlined"
+          value={staticDir}
+          size='small'
+          onChange={handleChangeStaticDir}
+        />
+        <p>on a server listening at</p>
+        <TextField
+          id='server_hostname'
+          label='hostname/ip'
+          variant='outlined'
+          value={hostname}
+          size='small'
+          onChange={handleChangeHostname}
+        />
+        <p>:</p>
+        <TextField
+          id='server_port'
+          label='port'
+          variant='outlined'
+          value={port}
+          css={{ width: '6rem' }}
+          size='small'
+          onChange={handleChangePort}
+        />
+      </Box>
     </PipelineComponent>
   );
 };
