@@ -12,7 +12,7 @@ const Output = (): JSX.Element => {
   return (
     <Stack>
       <Typography variant='body1' align='center'>
-        would be served at <code>{`${hostname}:${port}${route}`}</code>.
+        ...would be served at <code>{`${hostname}:${port}${route}`}</code>.
       </Typography>
     </Stack>
   );
