@@ -16,6 +16,19 @@ const theme = createTheme({
     text: {
       primary: '#2E3440',
     },
+    components: {
+      MuiPaper: {
+        variants: [
+          {
+            props: { variant: 'code' },
+            style: {
+              backgroundColor: '#2E3440',
+              color: '#D3DEE9',
+            }
+          }
+        ],
+      },
+    },
   },
   typography: {
     fontSize: 18,
