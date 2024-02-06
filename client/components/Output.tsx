@@ -10,7 +10,7 @@ const Output = (): JSX.Element => {
   const route = path.resolve('/', httpRoute, 'cat_meme.gif');
 
   return (
-    <Stack id='result' sx={{ my: 4 }}>
+    <Stack>
       <Typography variant='body1' align='center'>
         would be served at <code>{`${hostname}:${port}${route}`}</code>.
       </Typography>
