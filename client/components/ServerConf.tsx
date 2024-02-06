@@ -1,9 +1,9 @@
-import { Box, Stack, TextField, css } from '@mui/material';
+import { Box, TextField, css } from '@mui/material';
 import { useContext } from 'react';
 
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
-import FlowIndicator from './FlowIndicator';
+import PipelineComponent from './PipelineComponent';
 
 const serverSetupStyle = css({
   display: 'flex',
@@ -39,9 +39,7 @@ const ServerConf = (): JSX.Element => {
   }
 
   return (
-    <Box id='server_setup'>
-      <Stack>
-        <Box css={serverSetupStyle}>
+    <PipelineComponent>
           <p>A cat gif saved in <code>__dirname/</code></p>
           <TextField
             id="static_directory"
@@ -71,9 +69,7 @@ const ServerConf = (): JSX.Element => {
             onChange={handleChangePort}
           />
         </Box>
-        <FlowIndicator />
-      </Stack>
-    </Box>
+    </PipelineComponent>
   );
 };
 

@@ -1,9 +1,9 @@
-import { Paper, Stack, TextField } from '@mui/material';
+import { Paper, TextField } from '@mui/material';
 import { useContext } from 'react';
 
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
-import FlowIndicator from './FlowIndicator';
+import PipelineComponent from './PipelineComponent';
 
 // const serverSetupStyle = css({
 //   display: 'flex',
@@ -32,7 +32,7 @@ const ExpressStatic = (): JSX.Element => {
   }
 
   return (
-    <Stack>
+    <PipelineComponent>
       <Paper sx={{ p: 2 }} id='express_static_setup'>
         <pre>app.use(</pre>
         <TextField
@@ -55,8 +55,7 @@ const ExpressStatic = (): JSX.Element => {
         />
         <pre>))</pre>
       </Paper>
-      <FlowIndicator />
-    </Stack>
+    </PipelineComponent>
   );
 };
 
