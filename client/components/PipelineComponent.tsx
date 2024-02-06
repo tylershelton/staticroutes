@@ -11,7 +11,7 @@ type PipelineComponentProps = {
 const PipelineComponent = ({ title, children }: PipelineComponentProps): JSX.Element => {
   return (
     <Stack sx={{ mb: 4 }}>
-      {title ? <Typography variant='overline'>{title}</Typography> : null}
+      {title ? <Typography variant='overline' component='h2'>{title}</Typography> : null}
       {children}
       <FlowIndicator />
     </Stack>
