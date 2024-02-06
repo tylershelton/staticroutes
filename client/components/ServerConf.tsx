@@ -1,17 +1,9 @@
-import { Box, TextField, css } from '@mui/material';
+import { Stack, TextField } from '@mui/material';
 import { useContext } from 'react';
 
 import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
 import PipelineComponent from './PipelineComponent';
-
-const serverSetupStyle = css({
-  display: 'flex',
-  '& p, pre': {
-    whiteSpace: 'nowrap',
-    margin: 'auto 0.5rem'
-  }
-});
 
 const ServerConf = (): JSX.Element => {
   const { hostname, port, staticDir } = useContext(RouteContext);
@@ -40,7 +32,14 @@ const ServerConf = (): JSX.Element => {
 
   return (
     <PipelineComponent>
-      <Box sx={{ mx: 'auto', w: '100%' }} css={serverSetupStyle}>
+      <Stack
+        alignItems='center'
+        direction='row'
+        flexWrap='wrap'
+        spacing={1}
+        sx={{ rowGap: 0.5, mx: 'auto', w: '100%' }}
+        useFlexGap
+      >
         <p>A cat gif saved in <code>__dirname/</code></p>
         <TextField
           id="static_directory"
@@ -69,7 +68,8 @@ const ServerConf = (): JSX.Element => {
           size='small'
           onChange={handleChangePort}
         />
-      </Box>
+        <p>...</p>
+      </Stack>
     </PipelineComponent>
   );
 };
