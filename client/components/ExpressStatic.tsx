@@ -5,12 +5,11 @@ import { RouteContext, RouteDispatchContext } from '../contexts/RouteContext';
 import { useDispatchFromContext } from '../lib/dispatchHelpers';
 import PipelineComponent from './PipelineComponent';
 
-
-declare module '@mui/material/Paper' {
-  interface PaperPropsVariantOverrides {
-    code: true;
-  }
-}
+// declare module '@mui/material/Paper' {
+//   interface PaperPropsVariantOverrides {
+//     code: true;
+//   }
+// }
 
 const ExpressStatic = (): JSX.Element => {
   const { httpRoute, staticDir } = useContext(RouteContext);
