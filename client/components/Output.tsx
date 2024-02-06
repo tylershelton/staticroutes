@@ -1,7 +1,8 @@
 import { Stack, Typography } from '@mui/material';
 import { useContext } from 'react';
-import { RouteContext } from '../contexts/RouteContext';
 import path from 'path';
+
+import { RouteContext } from '../contexts/RouteContext';
 
 const Output = (): JSX.Element => {
   const { hostname, httpRoute, port } = useContext(RouteContext);
